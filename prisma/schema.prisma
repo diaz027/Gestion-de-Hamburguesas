@@ -32,6 +32,7 @@ datasource db {
 //   description   String
 //   price         Int
 //   img           String
+//   bebidas       Bebidas[]
 //   ingredientes  Ingredientes[]
 //   ventas        Ventas[]
 // }
