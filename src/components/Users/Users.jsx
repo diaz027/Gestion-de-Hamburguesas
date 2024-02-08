@@ -22,14 +22,14 @@ const Users = () => {
           alt="user"
         />
         <h1 className="font-sans font-semibold pt-7 ">{usuario.name}</h1> */}
-        {isLogin ? (
-          <li>
-            <UserButton afterSignOutUrl="/" />
-          </li>
-        ) : (
-          <Link href={"/sign-in"}></Link>
-        )}
       </div>
+      {isLogin ? (
+        <li>
+          <UserButton afterSignOutUrl="/" />
+        </li>
+      ) : (
+        <Link href={"/sign-in"}></Link>
+      )}
       <button className="  bg-yellow-500 text-black font-bold py-2 px-4 rounded absolute top-5 right-5 place-content-center">
         <img
           className="w-4 absolute place-content-center"
