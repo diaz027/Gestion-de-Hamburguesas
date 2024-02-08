@@ -87,8 +87,8 @@ model Ventas {
 }
 
 model User {
-  id           Int            @id @default(autoincrement())
-  user_id      String         @unique
-  email        String         @unique
-  hamburguesas Hamburguesas[]
+  id      Int      @id @default(autoincrement())
+  user_id String   @unique
+  email   String   @unique
+  ventas  Ventas[]
 }
