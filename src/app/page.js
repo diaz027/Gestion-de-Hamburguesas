@@ -1,7 +1,10 @@
-export default function Home() {
+import Home from "@/components/Home/Home";
+import 'tailwindcss/tailwind.css'
+
+export default function HomeP() {
   return (
     <>
-      <h1>joni se la come doblada, y es un vago dormilon</h1>
+    <Home></Home>
     </>
   );
 }
