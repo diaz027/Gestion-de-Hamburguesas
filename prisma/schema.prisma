@@ -10,69 +10,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// model Ingredientes {
-//   id          Int   @id @default(autoincrement())
-//   pan         Int
-//   hamburgusas Int
-//   mostaza     Int
-//   tomate      Int
-//   lechuga     Int
-//   cheddar     Int
-//   bacon       Int
-//   cebolla     Int
-//   mayoneza    Int
-//   huevo       Int
-//   userId      Int?
-//   user        User? @relation(fields: [userId], references: [id])
-// }
-
-// model User {
-//   id           Int            @id @default(autoincrement())
-//   user_id      String         @unique
-//   username     String         @unique
-//   email        String         @unique
-//   hamburguesas Ingredientes[]
-// }
-
-// model Ventas {
-//   id            Int    @id @default(autoincrement())
-//   nombre        String
-//   telefono      String
-//   direccion     String
-//   numeroDeOrden Int    @default(autoincrement())
-// }
-
-// model Bebidas {
-//   id          Int    @id @default(autoincrement())
-//   name        String
-//   desccrition String
-//   price       Int
-// }
-
-model Productos {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String
-  price       Int
-  img         String
-  ventas      Ventas[]
-}
-
-model Ventas {
-  id            Int         @id @default(autoincrement())
-  nombre        String
-  telefono      String
-  direccion     String
-  numeroDeOrden Int         @default(autoincrement())
-  userId        Int?
-  user          User?       @relation(fields: [userId], references: [id])
-  productos     Productos[]
+model Hamburguesas {
+  id          Int   @id @default(autoincrement())
+  pan         Int
+  hamburgusas Int
+  mostaza     Int
+  tomate      Int
+  lechuga     Int
+  cheddar     Int
+  bacon       Int
+  cebolla     Int
+  mayoneza    Int
+  userId      Int?
+  user        User? @relation(fields: [userId], references: [id])
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  user_id  String   @unique
-  username String   @unique
-  email    String   @unique
-  ventas   Ventas[]
+  id           Int            @id @default(autoincrement())
+  user_id      String         @unique
+  email        String         @unique
+  hamburguesas Hamburguesas[]
 }
