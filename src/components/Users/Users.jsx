@@ -15,29 +15,33 @@ const Users = () => {
   };
   return (
     <>
-      <div className="flex ">
-        {/* <img
-          className="w-12  mx-3 my-4 br-20 rounded-full"
-          src={usuario.img}
-          alt="user"
-        />
-        <h1 className="font-sans font-semibold pt-7 ">{usuario.name}</h1> */}
+      <div className=" absolute flex w-20  mx-7 my-6 br-20  scale-150">
+        {isLogin ? (
+          <>
+            <UserButton
+              className="rounded-full transform scale-125"
+              afterSignOutUrl="/"
+            />
+            <h4
+              className="font-sans font-semibold italic text-xs text-nowrap my-auto mx-2 "
+            >
+              {"Hola " + user.user.username +"!"}
+            </h4>
+          </>
+        ) : (
+             <a  href="/sign-in" className="  bg-yellow-500 font-bold text-black rounded-sm my-1.5 mx-1.5 place-content-center text-sm h-6.5 text-center transform scale-80 ">
+          <p className="my-1">Ingresa</p>
+        </a>
+        )}
       </div>
-      {isLogin ? (
-        <li>
-          <UserButton afterSignOutUrl="/" />
-        </li>
-      ) : (
-        <Link href={"/sign-in"}></Link>
-      )}
-      <button className="  bg-yellow-500 text-black font-bold py-2 px-4 rounded absolute top-5 right-5 place-content-center">
+      <a className="  bg-yellow-500 text-black font-bold py-2 px-4 rounded absolute top-5 right-5 place-content-center ">
         <img
           className="w-4 absolute place-content-center"
           src="https://cdn-icons-png.flaticon.com/512/263/263056.png"
           alt=""
         />
         __ Puntos
-      </button>
+      </a>
     </>
   );
 };
